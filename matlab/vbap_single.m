@@ -1,5 +1,3 @@
-clear
-
 % Globals
 % We will declare global variables that this function and the callbacks
 % can all access
@@ -19,13 +17,13 @@ catch
 end
 
 % Subscribers
-usv_sub = rossubscriber('/cora/sensors/p3d',@usv_odom_callback, 'DataFormat', 'struct');
+usv_sub = rossubscriber('/cora1/cora/sensors/p3d',@usv_odom_callback, 'DataFormat', 'struct');
 rabbit_sub = rossubscriber('/rabbit',@rabbit_position_callback, 'DataFormat', 'struct');
 % Assign  message
 RABBIT_POSITION = rosmessage('geometry_msgs/PointStamped');
 
 % Setup Publisher
-cmd_pub = rospublisher('/cora/cmd_vel','geometry_msgs/Twist');
+cmd_pub = rospublisher('/cora1/cora/cmd_vel','geometry_msgs/Twist');
 cmd_msg = rosmessage(cmd_pub);
 
 % Infinite loop
