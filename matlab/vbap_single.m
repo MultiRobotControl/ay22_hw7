@@ -19,10 +19,8 @@ catch
 end
 
 % Subscribers
-usv_sub = rossubscriber('/cora/sensors/p3d',@usv_odom_callback, ...
-    'DataFormat', 'struct');
-rabbit_sub = rossubscriber('/rabbit',@rabbit_position_callback, ...
-    'DataFormat', 'struct');
+usv_sub = rossubscriber('/cora/sensors/p3d',@usv_odom_callback, 'DataFormat', 'struct');
+rabbit_sub = rossubscriber('/rabbit',@rabbit_position_callback, 'DataFormat', 'struct');
 % Assign  message
 RABBIT_POSITION = rosmessage('geometry_msgs/PointStamped');
 
