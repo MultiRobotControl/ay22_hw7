@@ -2,7 +2,7 @@
 % Filename
 clear all
 
-fname = '2021-11-18-20-29-31.bag';
+fname = '2021-11-18-20-35-29.bag';
 % Create a bag file object with the file name
 % by omitting the semicolon this displays some information about
 % the bag file
